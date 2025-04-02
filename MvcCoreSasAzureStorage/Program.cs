@@ -1,8 +1,10 @@
 using MvcCoreSasAzureStorage.Helpers;
+using MvcCoreSasAzureStorage.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddTransient<ServiceAzureAlumnos>();
 builder.Services.AddTransient<HelperXML>();
 builder.Services.AddControllersWithViews();
 
