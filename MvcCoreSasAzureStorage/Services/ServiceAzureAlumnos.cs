@@ -64,6 +64,7 @@ namespace MvcCoreSasAzureStorage.Services
             string token = await this.GetTokenAsync(curso);
             Alumno a = new Alumno();
             a.IdAlumno = idAlumno;
+            //a.Curso = "AZURE";
             a.Curso = curso;
             a.Nombre = nombre;
             a.Apellidos = apellidos;

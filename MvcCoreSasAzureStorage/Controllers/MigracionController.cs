@@ -8,10 +8,12 @@ namespace MvcCoreSasAzureStorage.Controllers
     public class MigracionController : Controller
     {
         private HelperXML helper;
+        private string azureKeys;
 
-        public MigracionController(HelperXML helper)
+        public MigracionController(HelperXML helper, IConfiguration configuration)
         {
             this.helper = helper;
+            this.azureKeys = configuration.GetValue<string>("AzureKeys:StorageAccount");
         }
 
         public IActionResult Index()
@@ -22,7 +24,6 @@ namespace MvcCoreSasAzureStorage.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(string accion)
         {
-            string azureKeys = "";
             TableServiceClient serviceClient = new TableServiceClient(azureKeys);
             TableClient tableClient = serviceClient.GetTableClient("alumnos");
             await tableClient.CreateIfNotExistsAsync();

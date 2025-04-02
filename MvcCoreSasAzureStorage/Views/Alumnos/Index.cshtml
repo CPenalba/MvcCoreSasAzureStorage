@@ -7,7 +7,7 @@
 <h1>Azure Alumnos SaS Token</h1>
 
 <p>
-	<a asp-controller="Alumnos" asp-action="Create" class="btn btn-info">Create new</a>
+	<a asp-controller="Alumnos" asp-action="Create" class="btn btn-outline-info">Create new</a>
 </p>
 
 <form method="post">
@@ -37,7 +37,6 @@
 				<th>
 					@Html.DisplayNameFor(model => model.Nota)
 				</th>
-
 			</tr>
 		</thead>
 		<tbody>
@@ -59,7 +58,6 @@
 					<td>
 						@Html.DisplayFor(modelItem => item.Nota)
 					</td>
-
 				</tr>
 			}
 		</tbody>
